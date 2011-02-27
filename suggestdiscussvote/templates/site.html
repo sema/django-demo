@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Suggest Discuss Vote</title>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css">
+</head>
+
+<body>
+
+  <div id="container">
+    <header>
+    <a href="/"><h1>Suggest Discuss Vote</h1></a>
+
+    <ul>
+    {% if user.is_authenticated %}
+        <li><a href="{% url suggestion_create %}">new suggestion</a></li>
+        <li><a href="{% url logout %}">log out</a></li>
+    {% else %}
+        <li><a href="{% url login %}">Log in</a></li>
+    {% endif %}
+    </ul>
+    </header>
+
+    <div id="main">
+
+    {% block content %}
+
+    {% endblock %}
+
+    </div>
+
+    <footer>
+
+    </footer>
+  </div> <!-- end of #container -->
+
+</body>
+</html>

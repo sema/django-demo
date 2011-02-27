@@ -1,0 +1,20 @@
+{% extends "site.html" %}
+
+{% block content %}
+
+<h2>Suggestions</h2>
+
+{% for suggestion in object_list %}
+
+<div class="suggestion">
+<h3><a href="{% url suggestion_detail suggestion.pk %}">{{ suggestion.title }}</a></h3>
+
+<p>{{ suggestion.description|truncatewords_html:7 }}</p>
+
+{% include "sdvapp/parts/vote.html" %}
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

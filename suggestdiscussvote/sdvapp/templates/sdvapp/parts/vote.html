@@ -1,0 +1,17 @@
+{% if user.is_authenticated %}
+
+{% if user in suggestion.supported_by.all %}
+
+    <form class="vote" method="POST" action="{% url suggestion_unsupport suggestion.pk %}">{% csrf_token %}
+        <input type="submit" name="do_unsupport" value="Remove support" />
+    </form>
+
+{% else %}
+
+    <form class="vote" method="POST" action="{% url suggestion_support suggestion.pk %}">{% csrf_token %}
+        <input type="submit" name="do_support" value="Support +1" />
+    </form>
+
+{% endif %}
+
+{% endif %}

@@ -1,0 +1,136 @@
+body {
+  margin: 2em;
+  font-family: "Arial", Helvetica, sans-serif;
+  color: #2e3436;
+}
+
+/** Header **/
+
+header {
+  overflow: auto;
+}
+
+header h1 {
+  height: 51px;
+  width: 321px;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+
+  line-height: 300px;
+  overflow: hidden;
+
+  float: left;
+}
+
+header ul {
+  padding-top: 1em;
+}
+
+header ul li {
+  display: inline;
+  margin-left: 2em;
+}
+
+header ul li a {
+  font-size: 1.1em;
+  color: #a40000;
+  text-decoration: none;
+}
+
+/** General content **/
+
+h2 {
+  font-size: 1.8em;
+  color: #a40000;
+}
+
+h3 {
+  font-size: 1.1em;
+  color: #a40000;
+}
+
+a {
+  color: #2e3436;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: #a40000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#main {
+  margin-left: 1em;
+  width: 800px;
+}
+
+/** Forms **/
+
+form p label {
+  display: block;
+}
+
+form p input, form p textarea {
+  padding: 0.2em;
+  width: 800px;
+}
+
+form input, form select {
+  font-size: 1.4em;
+}
+
+/** Vote list **/
+
+.suggestion {
+  background-color: #E2E3E1;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  overflow: auto;
+}
+
+.suggestion h3 {
+  padding: 0;
+  display: inline;
+}
+
+.suggestion p {
+  display: inline;
+  margin-left: 1em;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.suggestion form {
+  float: right;
+}
+
+form.vote input {
+  font-size: 1em;
+}
+
+table.detail {
+  width: 800px;
+  text-align: center;
+}
+
+/** Detail page **/
+
+div.control {
+  float: right;
+}
+
+div.control form {
+  display: inline;
+  margin-left: 2em;
+}
+
+table.detail th {
+  color: #a40000;
+}

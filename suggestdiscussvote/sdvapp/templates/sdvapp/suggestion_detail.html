@@ -1,0 +1,46 @@
+{% extends "site.html" %}
+
+{% block content %}
+
+<div class="suggestion-detail">
+
+<div class="control">
+    {% if perms.sdvapp.change_suggestion or user == suggestion.suggested_by %}
+    <a href="{% url suggestion_update suggestion.pk %}">update</a>
+    {% endif %}
+
+    {% include "sdvapp/parts/vote.html" %}
+</div>
+
+<h2>{{ suggestion.title }}</h2>
+
+<p>{{ suggestion.description }}</p>
+
+<table class="detail">
+<tr><th>Status</th><th>Created</th><th>Supported by</th></tr>
+<tr><td>{{ suggestion.get_status_display }}</td>
+    <td>{{ suggestion.created }}</td>
+    <td>{{ suggestion.supported_by.count }}</td>
+</tr>
+</table>
+
+<h3>Comments</h3>
+
+{% for comment in comments %}
+
+    <p>{{ comment.comment_by.username }} @ {{ comment.created }} &gt; {{ comment.comment }}</p>
+
+{% endfor %}
+
+{% if user.is_authenticated %}
+
+    <form method="POST" action="">{% csrf_token %}
+    {{ comment_form.as_p }}
+    <input type="submit" name="do_comment" value="Comment" />
+    </form>
+
+{% endif %}
+
+</div>
+
+{% endblock %}
